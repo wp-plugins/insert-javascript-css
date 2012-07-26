@@ -3,8 +3,8 @@ Contributors: RyanNutt
 Donate link: http://www.nutt.net/donate/
 Tags: post, page, javascript, css
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 0.1
+Tested up to: 3.4.1
+Stable tag: 0.2
 License: GPLv2
 
 Adds fields to the post and page edit pages that allow you to insert custom JavaScript or CSS for that
@@ -65,8 +65,11 @@ constant defined in `insert-javascript-css.php` inside the plugin folder.
 
 == Changelog ==
 
+= 0.2 =
+Fix so CSS and JS will show up in post types other than post.
+
 = 0.1 =
 Initial release
 
 == Upgrade Notice ==
-New release, nothing to upgrade
+Fix so that JS and CSS will load in post types other than post.

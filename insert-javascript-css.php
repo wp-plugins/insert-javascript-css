@@ -3,10 +3,10 @@
 Plugin Name:    Insert JavaScript & CSS
 Plugin URI:     http://www.nutt.net/tag/insert-javascript-css/
 Description:    Adds a field to the post / page edit screens to allow you to insert custom JavaScript and CSS for just that post or page.
-Version:        0.1
+Version:        0.2
 Author:         Ryan Nutt
 Author URI: 	http://www.nutt.net
-License:        GPL2
+License:        GPLv2
 */
 
 /* Settings */
@@ -40,7 +40,7 @@ class InsertJavaScriptCSS {
     }
     
     public function add_to_head() {
-        global $posts;
+        global $posts; 
         $ray = array(); 
         foreach ($posts as $p) {
             $ray[] = $p->ID;
@@ -51,7 +51,8 @@ class InsertJavaScriptCSS {
         }
         $ids = implode(',',$ray);
         
-        $myPosts = query_posts(array(
+        $myPosts = get_posts(array(
+            'post_type' => 'any',
             'post__in' => $ray,
             'meta_query' => array(
                 'relation' => 'OR',
@@ -67,7 +68,7 @@ class InsertJavaScriptCSS {
                 )
             )
         ));
-        wp_reset_query(); 
+        
         
         if (empty($myPosts)) {
             return; 

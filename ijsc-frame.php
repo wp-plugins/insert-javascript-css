@@ -1,8 +1,4 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 include('../../../wp-admin/admin.php'); 
 
 if (!current_user_can(IJSC_CAPABILITY_REQUIRED)) {
@@ -23,7 +19,7 @@ remove_action('wp_footer', 'wp_admin_bar_render', 1000);
 <!DOCTYPE html>
 <html>
     <head>
-    <?php wp_head();?>
+    <?php iframe_header(); ?>
     </head>
     <body id="" style="height:100px;">
         <div id="media-upload-header">
